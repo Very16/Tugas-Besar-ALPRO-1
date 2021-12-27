@@ -141,7 +141,7 @@ class Buyyer(Login):
 		if ans == 1:
 			self.beliBarang()
 		elif ans == 2:
-			barang2()
+			self.barang2()
 		elif ans == 3:
 			print(self.cekSaldo())
 			self.menu()
@@ -177,7 +177,7 @@ class Seller(Login):
 		x = False
 		while not x:
 			harga = input("Masukkan harga atau ketik 00 untuk mebmbatalkan: ")
-			if "00" in harga:
+			if "00" == harga:
 				return self.menu()
 			if int(harga) <= 0:
 				print("Harga tidak boleh kurang dari sama dengan 0")
@@ -193,7 +193,7 @@ class Seller(Login):
 				continue
 			stock = int(stock)
 			x = False
-		barang = Product(nama, harga, stock, user)
+		barang = Product(nama, harga, stock, self.user)
 		listbarang.append(barang)
 		print("Success add barang baru untuk dijual")
 		return self.menu()
@@ -207,7 +207,7 @@ class Seller(Login):
 		if barang == []:
 			print("Kamu belum menjual barang apapun.")
 			return self.menu()
-		ret = "No.	Nama	Harga	Stock"
+		ret = "No.	Nama	Harga	Stock\n\n"
 		no = 0
 		for xx in barang:
 			no += 1
@@ -251,8 +251,9 @@ class Seller(Login):
 4. Total penjualan
 5. Logout
 	
-	By SexyBots
+	By Kelompok 11
 		"""
+		print(ret)
 		ans = int(input("Masukkan angka dari menu: "))
 		if ans == 1:
 			self.tambahBarang()
@@ -314,7 +315,7 @@ def signUp():
 			User.append(cl)
 			print("Success sign up")
 			return main()
-	except KeyboarInterrupt:
+	except KeyboardInterrupt:
 		main()
 
 #Main menu
@@ -327,6 +328,7 @@ def main():
 2. Login
 3. Exit
 		"""
+		print(ret)
 		ans = int(input("Masukkan angka: "))
 		if ans == 1:
 			signUp()
@@ -346,3 +348,5 @@ def main():
 			main()
 	except KeyboardInterrupt:
 		sys.exit()
+
+main()
