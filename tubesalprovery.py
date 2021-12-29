@@ -107,7 +107,7 @@ class Buyyer(Login):
 		for x in listbarang:
 			no += 1
 			ret += f"{no}.	{x.getName()}	Rp.{rupiah(x.getHarga())}	{x.getStock()}	{x.user.getName()}\n"
-		ret += "\n	By SexyBots"
+		ret += "\n	By Kelompok 14"
 		print(ret)
 		return self.menu()
 	
@@ -120,7 +120,7 @@ class Buyyer(Login):
 		for x in self.riwayat:
 			no += 1
 			ret += "{}. Nama: {}	Jumlah: {}	Harga: Rp.{}	Penjual: {}\n".format(no, x, x["jumlah"], rupiah(x["harga"]), x["penjual"])
-		ret += "\n	By SexyBots"
+		ret += "\n	By Kelompok 14"
 		print(ret)
 		return self.menu()
 	
@@ -212,7 +212,7 @@ class Seller(Login):
 		for xx in barang:
 			no += 1
 			ret += f"{no}.	{xx.getName()}	Rp.{rupiah(xx.getHarga())}	{xx.getStock()}\n"
-		ret += "\n	By Sexybots"
+		ret += "\n	By Kelompok 14"
 		print(ret)
 		return self.menu()
 	
@@ -251,7 +251,7 @@ class Seller(Login):
 4. Total penjualan
 5. Logout
 	
-	By Kelompok 11
+	By Kelompok 14
 		"""
 		print(ret)
 		ans = int(input("Masukkan angka dari menu: "))
